@@ -106,6 +106,10 @@ Settings are stored via electron-store:
 - **Sound effects**: Enable/disable sounds
 - **Hooks**: Enable Claude Code integration
 
+## Credits
+
+Inspired by [Clawdachi](https://github.com/gonzchris/Clawdachi) by [@gonzchris](https://github.com/gonzchris), originally built for macOS using Swift and SpriteKit. This is a cross-platform rewrite using Electron and PixiJS.
+
 ## License
 
 MIT
