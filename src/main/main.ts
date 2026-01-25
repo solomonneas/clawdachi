@@ -4,6 +4,7 @@ import Store from 'electron-store';
 import { setupTray } from './tray';
 import { setupIPC } from './ipc';
 import { ClaudeMonitor } from './claude/monitor';
+import { startRemoteServer, stopRemoteServer } from './remote-server';
 import { AppSettings, DEFAULT_SETTINGS } from '../shared/types';
 import { WINDOW } from '../shared/constants';
 
@@ -14,6 +15,7 @@ const store = new Store<AppSettings>({
 
 let mainWindow: BrowserWindow | null = null;
 let claudeMonitor: ClaudeMonitor | null = null;
+let remoteServer: { port: number; stop: () => void } | null = null;
 
 function createWindow(): void {
   const settings = store.store;
@@ -84,6 +86,13 @@ app.whenReady().then(() => {
   setupIPC(mainWindow!, store);
   startClaudeMonitor();
 
+  // Start HTTP server for remote state updates
+  const settings = store.store;
+  if (settings.remoteEnabled) {
+    remoteServer = startRemoteServer(mainWindow!, settings.remotePort);
+    console.log(`[Clawdachi] Remote server started on port ${remoteServer.port}`);
+  }
+
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
       createWindow();
@@ -94,6 +103,9 @@ app.whenReady().then(() => {
 app.on('window-all-closed', () => {
   if (claudeMonitor) {
     claudeMonitor.stop();
+  }
+  if (remoteServer) {
+    remoteServer.stop();
   }
   if (process.platform !== 'darwin') {
     app.quit();

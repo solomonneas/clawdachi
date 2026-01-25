@@ -91,6 +91,9 @@ export interface AppSettings {
   hooksEnabled: boolean;
   outfit: string;
   firstRun: boolean;
+  // Remote monitoring settings
+  remoteEnabled: boolean;
+  remotePort: number;
 }
 
 /**
@@ -106,4 +109,7 @@ export const DEFAULT_SETTINGS: AppSettings = {
   hooksEnabled: true,
   outfit: 'default',
   firstRun: true,
+  // Remote monitoring enabled by default
+  remoteEnabled: true,
+  remotePort: 9876,
 };
