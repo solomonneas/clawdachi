@@ -32,12 +32,12 @@ function createWindow(): void {
     height: WINDOW.HEIGHT,
     x,
     y,
-    transparent: true,
-    frame: false,
-    resizable: false,
-    hasShadow: false,
+    transparent: false,  // DEBUG: temporarily disabled
+    frame: true,         // DEBUG: show frame
+    resizable: true,
+    hasShadow: true,
     alwaysOnTop: settings.alwaysOnTop,
-    skipTaskbar: true,
+    skipTaskbar: false,  // DEBUG: show in taskbar
     focusable: true,
     webPreferences: {
       nodeIntegration: false,
