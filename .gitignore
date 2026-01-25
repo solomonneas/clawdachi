@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+release/
+out/
+
+# AI files
+CLAUDE.md
+.claude/
+GEMINI.md
+.gemini/
+CODEX.md
+.codex/
+COPILOT.md
+.copilot/
+plan.md
+*.plan.md
+blueprint.md
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# Electron
+*.asar
+
+# Test
+coverage/
