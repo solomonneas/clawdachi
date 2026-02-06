@@ -1,44 +1,77 @@
-# Dependencies
-node_modules/
+# Personal AI context - DO NOT COMMIT
+BOOTSTRAP.md
+SOUL.md
+IDENTITY.md
+USER.md
+AGENTS.md
+HEARTBEAT.md
+TOOLS.md
+SAFETY_RULES.md
+MEMORY.md
+memory/
 
-# Build outputs
-dist/
-release/
-out/
+# OpenClaw files
+.openclaw/
+*.sqlite
 
-# AI files
-CLAUDE.md
-.claude/
+# AI Planning/Context (other providers)
 GEMINI.md
 .gemini/
 CODEX.md
 .codex/
 COPILOT.md
 .copilot/
+KIMI.md
+.kimi/
+.cursorrules
+.cursor/
+.continuerules
+.continue/
+.aider*
+.roo/
+.pi/
 plan.md
 *.plan.md
 blueprint.md
+.agents/
+.soul/
 
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
+# Environment files
+.env
+.env.*
+*.env
 
-# OS
-.DS_Store
-Thumbs.db
+# Secrets
+credentials.json
+*-credentials.json
+*.pem
+*.key
+id_rsa*
+id_ed25519*
 
 # Logs
 *.log
-npm-debug.log*
+logs/
 
-# Environment
-.env
-.env.local
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
 
 # Electron
+release/
+out/
 *.asar
-
-# Test
-coverage/
